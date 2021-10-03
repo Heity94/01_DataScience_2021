@@ -7,3 +7,5 @@
 .env
 .env
 *.png
+book/
+data/
