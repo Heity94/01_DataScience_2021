@@ -7,5 +7,5 @@
 .env
 .env
 *.png
-book/
 data/
+00_Literature/
