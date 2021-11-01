@@ -26,7 +26,7 @@ def ecdf(data):
 def bootstrap_replicate_1d(data, func):
     return func(np.random.choice(data, size=len(data)))
 
-def draw_bs_reps(data, func, size=1):
+def draw_bs_reps(data, func, size=100):
     """Draw bootstrap replicates."""
 
     # Initialize array of replicates: bs_replicates
@@ -64,7 +64,7 @@ def bs_2sample_test(xA, xB, func, direction =("two-sided","left", "right")[0], s
         p = np.sum(bs_replicates >= empirical_diff_means) / len(bs_replicates)
     print('p-value =', p)
     
-    return bs_replicates
+    return bs_replicates, p
 
 def plot2ECDFs(x1, x2,leg=('male', 'female'),xlab='birth weight(g)',ylab='ECDF',title=''):
     # Compute ECDF for sample size 40: m_40, f_40
